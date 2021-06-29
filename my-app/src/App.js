@@ -1,10 +1,11 @@
-import "./App.css";
+import HorizontalPage from "./components/horizontalPage/HorizontalPage";
+import style from "./app.module.scss";
 
 function App() {
   return (
-    <div className="App">
-      <h1>INVESTIGATION TIME</h1>
-    </div>
+    <main className={style.app}>
+      <HorizontalPage />
+    </main>
   );
 }
 
