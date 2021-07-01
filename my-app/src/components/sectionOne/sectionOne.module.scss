@@ -1,0 +1,19 @@
+.slide {
+  height: 100vh;
+  padding: 50px;
+}
+ 
+.slideOne {
+  width: var(--section-one); 
+  background: #a3f3d3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    margin-top: 20px;
+  }
+}
+  

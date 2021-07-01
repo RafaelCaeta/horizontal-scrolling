@@ -1,0 +1,28 @@
+.slide {
+  height: 100vh;
+  padding: 50px;
+}
+
+.slideTwo {
+  width: 70vw;
+  background: #efdefe;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .frontenders {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      max-height: 300px;
+    }
+  }
+
+  .renzo {
+    display: block;
+    margin: 100px auto 0;
+  }
+}

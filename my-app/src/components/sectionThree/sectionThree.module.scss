@@ -1,0 +1,19 @@
+.slide {
+  height: 100vh;
+  padding: 50px;
+}
+
+.slideThree {
+  width: 60vw;
+  background: #d2d22d;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .wizards {
+    display: grid;
+    place-items: center;
+    grid-gap: 60px;
+  }
+}

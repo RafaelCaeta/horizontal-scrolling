@@ -17,8 +17,9 @@
 .innerWrapper {
   display: flex;
   flex-direction: row;
-  // width: 200vw;
+  width: var(--horizontal-scroll-container-width); 
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
   overflow-y: hidden;
+  white-space: nowrap; 
 }
