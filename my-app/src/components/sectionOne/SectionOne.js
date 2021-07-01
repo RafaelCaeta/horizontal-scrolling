@@ -2,11 +2,11 @@ import clsx from "clsx";
 import React from "react";
 import style from "./sectionOne.module.scss";
 
-function SectionOne() {
+function SectionOne({ className }) {
   return (
-    <div className={clsx([style.slide, style.slideOne])}>
+    <div className={clsx([className, style.slideOne])}>
       <img src="/assets/bill.png" alt="bill" className={style.bill} />
-      <h1>Devs Master</h1>
+      <h1>The Devs Master</h1>
     </div>
   );
 }

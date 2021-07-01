@@ -1,12 +1,4 @@
-.slide {
-  height: 100vh;
-  padding: 50px;
-}
-
 .slideFour {
-  width: 40vw;
-  background: #e84b5b;
-
   h2 {
     margin: 0 auto;
     width: 100%;
@@ -22,6 +14,8 @@
     img {
       max-width: 150px;
       width: 100%;
+      width: 150px; 
+      object-fit: cover;
     }
   }
 }

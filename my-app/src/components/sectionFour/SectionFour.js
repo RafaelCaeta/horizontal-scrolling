@@ -2,9 +2,9 @@ import clsx from "clsx";
 import React from "react";
 import style from "./sectionFour.module.scss";
 
-function SectionFour() {
+function SectionFour({ className }) {
   return (
-    <div className={clsx([style.slide, style.slideFour])}>
+    <div className={clsx([className, style.slideFour])}>
       <h2>The Rescue Team</h2>
 
       <div className={style.rescueTeam}>

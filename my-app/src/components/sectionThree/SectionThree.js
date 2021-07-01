@@ -2,9 +2,9 @@ import clsx from "clsx";
 import React from "react";
 import style from "./sectionThree.module.scss";
 
-function SectionThree() {
+function SectionThree({ className }) {
   return (
-    <div className={clsx([style.slide, style.slideThree])}>
+    <div className={clsx([className, style.slideThree])}>
       <h2 className={style.bill}>The Wizards</h2>
 
       <div className={style.wizards}>

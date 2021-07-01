@@ -1,12 +1,4 @@
-.slide {
-  height: 100vh;
-  padding: 50px;
-}
-
 .slideTwo {
-  width: 70vw;
-  background: #efdefe;
-
   h2 {
     margin-bottom: 20px;
   }
@@ -18,11 +10,19 @@
 
     img {
       max-height: 300px;
+      width: 240px;
+      object-fit: cover;
+    }
+
+    .rafa {
+      margin-left: 60px;
     }
   }
 
   .renzo {
     display: block;
     margin: 100px auto 0;
+    width: 240px;
+    object-fit: cover; 
   }
 }

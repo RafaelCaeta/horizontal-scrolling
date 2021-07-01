@@ -1,12 +1,4 @@
-.slide {
-  height: 100vh;
-  padding: 50px;
-}
-
 .slideThree {
-  width: 60vw;
-  background: #d2d22d;
-
   h2 {
     margin-bottom: 20px;
   }
@@ -15,5 +7,15 @@
     display: grid;
     place-items: center;
     grid-gap: 60px;
+
+    .glenn {
+      width: 515px;
+      object-fit: cover;
+    }
+
+    .colin {
+      width: 260px;
+      object-fit: cover; 
+    }
   }
 }

@@ -17,7 +17,7 @@
 .innerWrapper {
   display: flex;
   flex-direction: row;
-  width: var(--horizontal-scroll-container-width); 
+  width: var(--horizontal-scroll-container-width);  
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
   overflow-y: hidden;

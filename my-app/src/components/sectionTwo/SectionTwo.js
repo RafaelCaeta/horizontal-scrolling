@@ -2,9 +2,9 @@ import clsx from "clsx";
 import React from "react";
 import style from "./sectionTwo.module.scss";
 
-function SectionTwo() {
+function SectionTwo({ className }) {
   return (
-    <div className={clsx([style.slide, style.slideTwo])}>
+    <div className={clsx([className, style.slideTwo])}>
       <h2>The Dream Team</h2>
 
       <div className={style.frontenders}>

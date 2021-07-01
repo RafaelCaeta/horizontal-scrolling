@@ -1,10 +1,6 @@
 :root {
-  --horizontal-scroll-container-width: calc(var(--section-one) + var(--section-two) + var(--section-three) + var(--section-four));
-  --section-one: 30vw; 
-  --section-two: 70vw; 
-  --section-three: 60vw; 
-  --section-four: 40vw; 
-}
+  --horizontal-scroll-container-width: 100px; 
+}  
 
 .app {
 
