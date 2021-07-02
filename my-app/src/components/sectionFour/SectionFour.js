@@ -7,7 +7,7 @@ function SectionFour({ className }) {
     <div className={clsx([className, style.slideFour])}>
       <h2>The Rescue Team</h2>
 
-      <div className={style.rescueTeam}>
+      <div className={clsx([style.rescueTeam, "on-scroll-animated"])}>
         <img src="/assets/stefan.png" alt="stefan" className={style.stefan} />
         <img src="/assets/roel.png" alt="roel" className={style.roel} />
         <img

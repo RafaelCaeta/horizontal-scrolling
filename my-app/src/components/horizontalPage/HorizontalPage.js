@@ -15,35 +15,44 @@ function HorizontalPage() {
   const sectionFive = useRef(null);
 
   useEffect(() => {
-    if (
-      sectionOne.current &&
-      sectionTwo.current &&
-      sectionThree.current &&
-      sectionFour.current &&
-      sectionFive.current
-    ) {
-      const width1 = sectionOne.current.getBoundingClientRect().width;
-      const width2 = sectionTwo.current.getBoundingClientRect().width;
-      const width3 = sectionThree.current.getBoundingClientRect().width;
-      const width4 = sectionFour.current.getBoundingClientRect().width;
-      const width5 = sectionFive.current.getBoundingClientRect().width;
-      const totalWidth = width1 + width2 + width3 + width4 + width5;
+    const sections = [
+      sectionOne.current,
+      sectionTwo.current,
+      sectionThree.current,
+      sectionFour.current,
+      sectionFive.current,
+    ];
 
-      const root = document.querySelector(":root");
+    const totalWidth = sections
+      .map((section) => section.getBoundingClientRect().width)
+      .reduce((a, b) => a + b);
 
-      root.style.setProperty(
-        "--horizontal-scroll-container-width",
-        `${totalWidth}px`
-      );
-    }
+    const root = document.querySelector(":root");
+    root.style.setProperty(
+      "--horizontal-scroll-container-width",
+      `${totalWidth}px`
+    );
   }, []);
 
-  // useEffect(() => {
-  //   globalEmitter.on('resize', checkScrollOffset);
-  //   return () => {
-  //     globalEmitter.off('resize', checkScrollOffset);
-  //   };
-  // })
+  useEffect(() => {
+    if (typeof document !== "undefined" && "IntersectionObserver" in window) {
+      const animatedSections = document.querySelectorAll(".on-scroll-animated");
+
+      let observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.transform = "translateY(-100px)";
+          } else {
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      });
+
+      animatedSections.forEach((section) => {
+        observer.observe(section);
+      });
+    }
+  }, []);
 
   return (
     <HorizontalScroll>
