@@ -10,6 +10,9 @@
     display: grid;
     place-items: center;
     grid-gap: 30px;
+    transform: translateY(150px);
+    opacity: 0;   
+    transition: opacity 2s ease-out, transform 2s ease-out; 
   
     img {
       max-width: 150px;
@@ -19,3 +22,9 @@
     }
   }
 }
+
+:global(.animation-1) {
+  transform: translateY(0) !important;
+  opacity: 1 !important; 
+}
+ 

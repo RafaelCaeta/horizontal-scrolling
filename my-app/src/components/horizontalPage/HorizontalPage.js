@@ -41,9 +41,9 @@ function HorizontalPage() {
       let observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.transform = "translateY(-100px)";
+            entry.target.classList.add("animation-1");
           } else {
-            entry.target.style.transform = "translateY(0)";
+            entry.target.classList.remove("animation-1");
           }
         });
       });
