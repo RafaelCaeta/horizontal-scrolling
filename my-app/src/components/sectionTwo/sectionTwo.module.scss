@@ -3,21 +3,37 @@
     margin-bottom: 20px;
   }
 
-  .frontenders {
+  .outerWrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
-    img {
-      max-height: 300px;
-      width: 240px;
-      object-fit: cover;
+    .frontenders {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      img {
+        max-height: 300px;
+        width: 240px;
+        object-fit: cover;
+      }
+  
+      .rafa {
+        margin-left: 60px;
+      }
     }
 
-    .rafa {
-      margin-left: 60px;
+    .textWrapper {
+      width: 350px;
+      margin-left: 30px;
+
+      p {
+        width: 100%;
+        white-space: normal;
+      }
     }
   }
+
 
   .renzo {
     display: block;
