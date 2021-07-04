@@ -6,7 +6,7 @@ function SectionOne({ className }) {
   return (
     <div className={clsx([className, style.slideOne])}>
       <img src="/assets/bill.png" alt="bill" className={style.bill} />
-      <h1>The Devs Master</h1>
+      <h1>Lord of this World</h1>
     </div>
   );
 }

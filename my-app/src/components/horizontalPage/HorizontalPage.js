@@ -15,23 +15,11 @@ function HorizontalPage() {
   const sectionFive = useRef(null);
 
   useEffect(() => {
-    const sections = [
-      sectionOne.current,
-      sectionTwo.current,
-      sectionThree.current,
-      sectionFour.current,
-      sectionFive.current,
-    ];
-
-    const totalWidth = sections
-      .map((section) => section.getBoundingClientRect().width)
-      .reduce((a, b) => a + b);
-
-    const root = document.querySelector(":root");
-    root.style.setProperty(
-      "--horizontal-scroll-container-width",
-      `${totalWidth}px`
-    );
+    updateHztScrollContainerWidth();
+    window.addEventListener("resize", updateHztScrollContainerWidth);
+    return () => {
+      window.removeEventListener("resize", updateHztScrollContainerWidth);
+    };
   }, []);
 
   useEffect(() => {
@@ -43,7 +31,7 @@ function HorizontalPage() {
           if (entry.isIntersecting) {
             entry.target.classList.add("animation-1");
           } else {
-            entry.target.classList.remove("animation-1");
+            // entry.target.classList.remove("animation-1");
           }
         });
       });
@@ -53,6 +41,34 @@ function HorizontalPage() {
       });
     }
   }, []);
+
+  function getSectionsTotalWidth(sections) {
+    if (Array.isArray(sections) && sections.length > 0) {
+      return sections
+        .map((section) => section.current.getBoundingClientRect().width)
+        .reduce((a, b) => a + b);
+    } else {
+      return 0;
+    }
+  }
+
+  function updateHztScrollContainerWidth() {
+    const totalWidth = getSectionsTotalWidth([
+      sectionOne,
+      sectionTwo,
+      sectionThree,
+      sectionFour,
+      sectionFive,
+    ]);
+
+    if (totalWidth) {
+      const root = document.querySelector(":root");
+      root.style.setProperty(
+        "--horizontal-scroll-container-width",
+        `${totalWidth}px`
+      );
+    }
+  }
 
   return (
     <HorizontalScroll>
