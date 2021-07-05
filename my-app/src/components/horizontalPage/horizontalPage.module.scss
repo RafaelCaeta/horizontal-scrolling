@@ -1,6 +1,11 @@
 .section {
   height: 100vh;
   padding: 50px;
+
+  :global(.animation-1) {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .sectionOne {

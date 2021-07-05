@@ -5,6 +5,7 @@ import SectionTwo from "../sectionTwo/SectionTwo";
 import SectionThree from "../sectionThree/SectionThree";
 import SectionFour from "../sectionFour/SectionFour";
 import SectionFive from "../sectionFive/SectionFive";
+import debounce from "../../utils/debounce";
 import style from "./horizontalPage.module.scss";
 
 function HorizontalPage() {
@@ -14,11 +15,13 @@ function HorizontalPage() {
   const sectionFour = useRef(null);
   const sectionFive = useRef(null);
 
+  const debounceResize = debounce(updateHztScrollContainerWidth, 400);
+
   useEffect(() => {
     updateHztScrollContainerWidth();
-    window.addEventListener("resize", updateHztScrollContainerWidth);
+    window.addEventListener("resize", debounceResize);
     return () => {
-      window.removeEventListener("resize", updateHztScrollContainerWidth);
+      window.removeEventListener("resize", debounceResize);
     };
   }, []);
 
@@ -30,8 +33,6 @@ function HorizontalPage() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("animation-1");
-          } else {
-            // entry.target.classList.remove("animation-1");
           }
         });
       });
