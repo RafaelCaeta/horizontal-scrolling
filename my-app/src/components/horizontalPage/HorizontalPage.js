@@ -14,6 +14,7 @@ function HorizontalPage() {
   const sectionThree = useRef(null);
   const sectionFour = useRef(null);
   const sectionFive = useRef(null);
+  const sectionSix = useRef(null);
 
   const debounceResize = debounce(updateHztScrollContainerWidth, 400);
 
@@ -29,13 +30,22 @@ function HorizontalPage() {
     if (typeof document !== "undefined" && "IntersectionObserver" in window) {
       const animatedSections = document.querySelectorAll(".on-scroll-animated");
 
-      let observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animation-1");
-          }
-        });
-      });
+      let observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // let hasIntersected = false;
+            // console.log("hasIntersected", hasIntersected);
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animation-1");
+            }
+            // hasIntersected = true;
+            // } else if (hasIntersected) {
+            //   entry.target.classList.add("animation-2");
+            // }
+          });
+        },
+        { threshold: 0.5 }
+      );
 
       animatedSections.forEach((section) => {
         observer.observe(section);
@@ -60,6 +70,7 @@ function HorizontalPage() {
       sectionThree,
       sectionFour,
       sectionFive,
+      sectionSix,
     ]);
 
     if (totalWidth) {
@@ -91,6 +102,10 @@ function HorizontalPage() {
 
       <div ref={sectionFive} className={style.sectionFive}>
         <SectionFive className={style.section} />
+      </div>
+
+      <div ref={sectionSix} className={style.sectionSix}>
+        <SectionThree className={style.section} />
       </div>
     </HorizontalScroll>
   );

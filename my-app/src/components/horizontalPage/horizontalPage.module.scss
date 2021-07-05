@@ -6,6 +6,10 @@
     transform: translateY(0);
     opacity: 1;
   }
+
+  :global(.animation-2) {
+    transform: rotate(-15deg);
+  } 
 }
 
 .sectionOne {
@@ -26,4 +30,8 @@
 
 .sectionFive {
   background: deepskyblue; 
+}
+
+.sectionSix {
+  background: #555; 
 }

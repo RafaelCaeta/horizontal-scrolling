@@ -7,10 +7,11 @@
   }
 
   .rescueTeam {
-    display: grid;
-    place-items: center;
-    grid-gap: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 250px;
     transform: translateY(150px);
+    transform: rotate(0);
     opacity: 0;   
     transition: opacity 2s ease-out, transform 2s ease-out; 
   
@@ -19,6 +20,7 @@
       width: 100%;
       width: 150px; 
       object-fit: cover;
+      margin-right: 40px;
     }
   }
 }
